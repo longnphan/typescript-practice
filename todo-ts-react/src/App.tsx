@@ -1,23 +1,21 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, SyntheticEvent } from "react";
+import List from "./List";
 import "./App.css";
 
-type todoItems = {
-  item: string;
-}
 
 function App() {
   const [textInput, setTextInput] = useState("");
-  const [todoList, setTodoList] = useState<todoItems[]>([]);
+  const [todoList, setTodoList] = useState<string[]>([]);
 
-  const handleSubmit = (e: ChangeEvent<HTMLInputElement>): void => {
-    e.preventDefault();
+  const handleSubmit = (event: SyntheticEvent) => {
+    event.preventDefault();
     setTodoList(prev => [...prev, textInput]);
     setTextInput("");
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    setTextInput(e.target.value)}
-  }
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setTextInput(event.target.value);
+  };
 
   return (
     <>
@@ -25,6 +23,7 @@ function App() {
         <input value={textInput} onChange={handleChange} />
         <button>Add</button>
       </form>
+      <List todoList={todoList} />
     </>
   );
 }
