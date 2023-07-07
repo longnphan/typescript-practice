@@ -1,9 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 
+type todoItems = {
+  item:string;
+}
+
 function App() {
   const [textInput, setTextInput] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState<todoItems[]>([]);
 
   const handleSubmit = e => {
     e.preventDefault();
