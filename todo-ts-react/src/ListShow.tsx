@@ -14,11 +14,7 @@ function ListShow({ todoItem }: TodoItemProps) {
     <>
       <li
         onClick={handleClick}
-        style={
-          isDone
-            ? { textDecoration: "line-through" }
-            : { textDecoration: "none" }
-        }
+        style={{ textDecoration: isDone ? "line-through" : "none" }}
       >
         {todoItem}
       </li>
