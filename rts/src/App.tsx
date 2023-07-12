@@ -1,9 +1,11 @@
 import React from "react";
+// import GuestList from "./state/GuestList";
+import UserSearch from "./state/UserSearch";
 
 function App() {
   return (
     <div>
-      <h1>App is connected!</h1>
+      <UserSearch />
     </div>
   );
 }
