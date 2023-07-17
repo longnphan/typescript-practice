@@ -5,6 +5,10 @@
 // It should return a string in the format "one for <name>, one for me"
 // If no name is provided, it should default to "you"
 
+function TwoFer(name: string = "you"): string {
+  return `one for ${name}, one for me`;
+}
+
 // twoFer() => "One for you, one for me"
 // twoFer("Elton") => "One for Elton, one for me"
 
@@ -21,3 +25,13 @@
 // OR...
 // - year is a multiple of 400
 // hint - use modulo
+
+function isLeapYear(year: number): boolean {
+  if (year % 4 === 0 && year % 100 !== 0) {
+    return true;
+  } else if (year % 400 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
