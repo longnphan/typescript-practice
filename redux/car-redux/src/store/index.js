@@ -1,6 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
-  carReducer,
   changeSearchTerm,
   addCar,
   removeCar,
